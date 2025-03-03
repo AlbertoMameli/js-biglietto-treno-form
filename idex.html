@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 
-<body>
+
     <!-- Il programma dovrà mostrare una form da compilare usando i corretti campi HTML di input con cui chiedere 
  all'utente il numero di chilometri che vuole percorrere e l'età del passeggero. Utilizzate Bootstrap come libreria UI.
 Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
@@ -27,72 +27,75 @@ Vi consigliamo di seguire questo ordine nella risoluzione dell'esercizio:
 
 
 
+<body>
     <main>
-        <div class="container text-center pt-5">
-            <h2>Inserisci i tuoi dati</h2>
-            <form id="user-form">
-                <div class="row pt-4 display-flex justify-content-between">
-                    <div class="col-2">
-                        <label class=" pb-4" for="genre">Genere</label>
-                        <select class="form-select" id="genre">
-                            <option value="male">Maschio</option>
-                            <option value="female">Femmina</option>
-                        </select>
-                    </div>
-                    <div class="col-5">
-                        <label class="pb-4" for="first-name">Nome passeggero</label>
-                        <input id="first-name" type="text" class="form-control">
-                    </div>
-                    <div class="col-5">
-                        <label class="pb-4" for="surname">Cognome passeggero</label>
-                        <input id="surname" type="text" class="form-control">
-                    </div>
-
-                </div>
-                <div class="row pt-5 display-flex justify-content-around">
-                    <div class="col-4 pt-4">
-                        <label class="pb-4" for="edge">Inserisci la tua data di nascita</label>
-                        <input id="edge" type="date" class="form-select">
-                    </div>
-                    <div class="col-4 pt-4">
-                        <label class="pb-4" for="destination">Scegli la tua destinazione</label>
-                        <select class="form-select" id="destination">
-                            <option data-km="45" value="venezia">Venezia</option>
-                            <option data-km="53" value="padova">Padova</option>
-                            <option data-km="37" value="treviso">Treviso</option>
-                            <option data-km="458" value="guasila">Guasila</option>
-                            <option data-km="457" value="selegas">Selegas</option>
-                            <option data-km="10" value="verona">Verona</option>
-                            <option data-km="267" value="firenze">Firenze</option>
-                            <option data-km="460" value="seuni">Seuni</option>
-
-                        </select>
-                    </div>
+      <div class="container text-center pt-5">
+        <h2>Inserisci i tuoi dati</h2>
+        <form id="user-form">
 
 
-                </div>
-                <div class="row">
-                    <div class="col pt-5">
-                        <button id="submit-btn" class="btn btn-primary ">Genera</button>
-                    </div>
-                </div>
 
-            </form>
+          <!-- Genere Nome e Cognome -->
 
-            <div class="container pt-5 d-none">
-                <div class="row">
-                <div class="col">
-                    <p>Il costo per il tuo viaggio per <span id="destinazione-prezzo"></span> è di €<span id="prezzo-finale"></span></p>
-                </div>
-
-                </div>
+          <div class="row pt-4 justify-content-between">
+            <div class="col-12 col-md-2">
+              <label class="pb-4" for="genre">Genere</label>
+              <select class="form-select" id="genre">
+                <option value="male">Maschio</option>
+                <option value="female">Femmina</option>
+              </select>
             </div>
-
+            <div class="col-12 col-md-5">
+              <label class="pb-4" for="first-name">Nome passeggero</label>
+              <input id="first-name" type="text" class="form-control">
+            </div>
+            <div class="col-12 col-md-5">
+              <label class="pb-4" for="surname">Cognome passeggero</label>
+              <input id="surname" type="text" class="form-control">
+            </div>
+          </div>
+  
+          <!--  Età e Destinazione -->
+          <div class="row pt-5 justify-content-around">
+            <div class="col-12 col-md-4 pt-4">
+              <label class="pb-4" for="eta">Inserisci la tua età</label>
+              <input id="eta" type="number" class="form-select" min="0">
+            </div>
+            <div class="col-12 col-md-4 pt-4">
+              <label class="pb-4" for="destination">Scegli la tua destinazione</label>
+              <select class="form-select" id="destination">
+                <option data-km="45" value="venezia">Venezia</option>
+                <option data-km="53" value="padova">Padova</option>
+                <option data-km="37" value="treviso">Treviso</option>
+                <option data-km="458" value="guasila">Guasila</option>
+                <option data-km="457" value="selegas">Selegas</option>
+                <option data-km="10" value="verona">Verona</option>
+                <option data-km="267" value="firenze">Firenze</option>
+                <option data-km="460" value="seuni">Seuni</option>
+              </select>
+            </div>
+          </div>
+  
+          <!--  Bottone -->
+          <div class="row">
+            <div class="col pt-5">
+              <button id="submit-btn" class="btn btn-primary">Genera</button>
+            </div>
+          </div>
+        </form>
+  
+        <!-- Sezione del risultato -->
+        <div class="container pt-5 d-none">
+          <div class="row">
+            <div class="col">
+              <p><strong>Il costo per il tuo viaggio per <span id="destinazione-prezzo"></span> è di €<span id="prezzo-finale"></span></strong></p>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
-
-
     <script src="js/script.js"></script>
-</body>
+  </body>
+  
 
 </html>
